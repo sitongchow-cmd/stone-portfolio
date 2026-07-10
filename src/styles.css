@@ -1222,7 +1222,6 @@ h2 {
   }
 
   .motion-ready .about,
-  .motion-ready .works,
   .motion-ready .skills,
   .motion-ready .contactPage {
     opacity: 0;
@@ -1231,7 +1230,6 @@ h2 {
   }
 
   .motion-ready .about.is-visible,
-  .motion-ready .works.is-visible,
   .motion-ready .skills.is-visible,
   .motion-ready .contactPage.is-visible {
     opacity: 1;
