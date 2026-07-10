@@ -30,3 +30,10 @@ For Vercel / Netlify:
 - Build command: `pnpm run build`
 - Output directory: `dist`
 
+For Vercel, this project also includes `vercel.json`, so Vercel should detect the correct build output automatically.
+
+If your GitHub repository contains the `STONE-portfolio` folder as a subfolder instead of placing these files at the repository root, set Vercel's Root Directory to:
+
+```txt
+STONE-portfolio
+```
