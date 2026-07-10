@@ -10,7 +10,11 @@ const indexHtml = await readFile(resolve(distDir, 'index.html'), 'utf8')
 
 await mkdir(serverDir, { recursive: true })
 await mkdir(distOpenAiDir, { recursive: true })
-await copyFile(resolve(root, '.openai', 'hosting.json'), resolve(distOpenAiDir, 'hosting.json'))
+try {
+  await copyFile(resolve(root, '.openai', 'hosting.json'), resolve(distOpenAiDir, 'hosting.json'))
+} catch {
+  // Vercel deployments do not need the ChatGPT Sites metadata file.
+}
 
 const serverSource = `const INDEX_HTML = ${JSON.stringify(indexHtml)};
 
