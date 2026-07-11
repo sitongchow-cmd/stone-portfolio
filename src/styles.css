@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "JiangChengJieXing";
+  src: url("./assets/fonts/jiangcheng-jiexing.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
   --paper: #fbf5e5;
   --paper-deep: #eee0c7;
@@ -9,6 +15,7 @@
   --wine: #621922;
   --line: rgba(25, 21, 16, 0.22);
   --shadow: 0 24px 70px rgba(48, 34, 18, 0.18);
+  --hand-cn: "JiangChengJieXing", "Kaiti SC", "STKaiti", "KaiTi", "楷体", "Microsoft YaHei", cursive;
 }
 
 * {
@@ -279,10 +286,10 @@ h1 {
 }
 
 .heroTitleCn {
-  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
-  font-size: 56px;
+  font-family: var(--hand-cn);
+  font-size: 42px;
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 1.2;
 }
 
 h2 {
@@ -442,7 +449,7 @@ h2 {
   max-width: 600px;
   margin-bottom: 28px;
   color: var(--olive);
-  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
+  font-family: var(--hand-cn);
   font-size: clamp(32px, 2.8vw, 46px);
   font-weight: 400;
   line-height: 1.12;
@@ -452,13 +459,14 @@ h2 {
 .introCard p:not(.smallHand) {
   max-width: 800px;
   color: var(--brown);
-  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
+  font-family: var(--hand-cn);
   font-size: 18px;
   line-height: 1.85;
 }
 
 .introCopy {
-  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
+  font-family: var(--hand-cn);
+  font-weight: 400;
 }
 
 .latinKeep {
@@ -681,11 +689,22 @@ h2 {
 .worksHeader h2 {
   margin-bottom: 0;
   color: var(--ink);
-  font-family: "Bradley Hand", "Segoe Print", "Comic Sans MS", "PingFang SC", "Microsoft YaHei", "Heiti SC", cursive;
-  font-size: clamp(48px, 5vw, 86px);
-  font-weight: 700;
-  line-height: 0.98;
+  font-family: var(--hand-cn);
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.18;
   transform: rotate(-1.2deg);
+}
+
+.worksTitleCn,
+.worksTitleSlash,
+.worksTitleEn {
+  display: inline-block;
+}
+
+.worksTitleEn {
+  font-family: "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+  font-size: 50px;
 }
 
 .worksHeader p {
@@ -931,10 +950,10 @@ h2 {
   max-width: 680px;
   margin-bottom: 18px;
   color: var(--olive);
-  font-family: "Bradley Hand", "Segoe Print", "Comic Sans MS", "PingFang SC", "Microsoft YaHei", "Heiti SC", cursive;
-  font-size: clamp(30px, 3vw, 48px);
-  font-weight: 700;
-  line-height: 1.12;
+  font-family: var(--hand-cn);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.36;
   transform: rotate(-1deg);
 }
 

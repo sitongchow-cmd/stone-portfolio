@@ -13,7 +13,7 @@ const heroTags = [
 ]
 
 const resumeFacts = [
-  ['Location', 'Germany · Nordrhein-Westfalen'],
+  ['Location', 'Germany · 北威州'],
   ['Languages', '中文 / English / Deutsch'],
   ['Tools', 'AI 大模型工具 / Canva / Figma / PS / 剪映'],
   ['Focus', '内容增长 / 海外社媒 / Creator Marketing / AI Workflow'],
@@ -352,8 +352,7 @@ function App() {
             <p className="smallHand">About Me</p>
             <h2 className="introCn">做内容，也搭系统。</h2>
             <p className="introCopy">
-              <span className="latinKeep">Stone</span>，目前居住在德国{' '}
-              <span className="latinKeep">Nordrhein-Westfalen</span>。我的经历横跨自由职业社区、出海品牌内容、新媒体矩阵、海外达人商务和数字游民社区运营。
+              <span className="latinKeep">Stone</span>，目前居住在德国北威州。我的经历横跨自由职业社区、出海品牌内容、新媒体矩阵、海外达人商务和数字游民社区运营。
             </p>
             <p className="introCopy">
               擅长把分散的创意，整理成可以执行、可以复盘、可以带来增长的内容系统：从用户理解、选题规划、文案表达、视觉制作，到数据复盘、私域咨询和转化路径。
@@ -381,7 +380,11 @@ function App() {
       <section className="works shell" id="works">
         <div className="sectionLabel">02 / Works Display</div>
         <div className="worksHeader">
-          <h2>作品集 / Things I Made</h2>
+          <h2>
+            <span className="worksTitleCn">作品集</span>
+            <span className="worksTitleSlash"> / </span>
+            <span className="worksTitleEn">Things I Made</span>
+          </h2>
           <p>按工作内容划分，每一条记录对应一个内容方向、一组平台素材和一段运营职责。</p>
         </div>
 
