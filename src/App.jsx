@@ -39,6 +39,7 @@ const works = [
   {
     no: '02',
     title: 'E-Talent Pte.Ltd. / 易特新景',
+    titleLines: ['E-Talent Pte.Ltd.', '易特新景'],
     duties: '海外品牌内容 / 公众号 / 小红书 / 内容模块搭建',
     images: [asset('assets/optimized/ppt/ppt-media-23.jpg'), asset('assets/optimized/e-talent-team-plog.jpg')],
     copy:
@@ -349,11 +350,12 @@ function App() {
         <div className="aboutGrid">
           <div className="noteCard introCard">
             <p className="smallHand">About Me</p>
-            <h2>做内容，也搭系统。</h2>
-            <p>
-              Stone，目前居住在德国 Nordrhein-Westfalen。我的经历横跨自由职业社区、出海品牌内容、新媒体矩阵、海外达人商务和数字游民社区运营。
+            <h2 className="introCn">做内容，也搭系统。</h2>
+            <p className="introCopy">
+              <span className="latinKeep">Stone</span>，目前居住在德国{' '}
+              <span className="latinKeep">Nordrhein-Westfalen</span>。我的经历横跨自由职业社区、出海品牌内容、新媒体矩阵、海外达人商务和数字游民社区运营。
             </p>
-            <p>
+            <p className="introCopy">
               擅长把分散的创意，整理成可以执行、可以复盘、可以带来增长的内容系统：从用户理解、选题规划、文案表达、视觉制作，到数据复盘、私域咨询和转化路径。
             </p>
             <span className="archiveDeco tapeOne" aria-hidden="true" />
@@ -389,7 +391,11 @@ function App() {
               <div className="workNo">{work.no}</div>
               <div className="workText">
                 <p>Project {work.no}</p>
-                <h3>{work.title}</h3>
+                <h3>
+                  {(work.titleLines ?? [work.title]).map((line) => (
+                    <span className="workTitleLine" key={line}>{line}</span>
+                  ))}
+                </h3>
                 <div className="workTags">
                   {work.duties.split(' / ').map((item) => (
                     <span key={item}>{item}</span>

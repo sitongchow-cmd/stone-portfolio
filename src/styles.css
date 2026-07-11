@@ -280,7 +280,9 @@ h1 {
 
 .heroTitleCn {
   font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
+  font-size: 56px;
   font-weight: 400;
+  line-height: 1.12;
 }
 
 h2 {
@@ -440,9 +442,9 @@ h2 {
   max-width: 600px;
   margin-bottom: 28px;
   color: var(--olive);
-  font-family: "Bradley Hand", "Segoe Print", "Comic Sans MS", "PingFang SC", "Microsoft YaHei", "Heiti SC", cursive;
+  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
   font-size: clamp(32px, 2.8vw, 46px);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.12;
   transform: rotate(-1deg);
 }
@@ -450,8 +452,18 @@ h2 {
 .introCard p:not(.smallHand) {
   max-width: 800px;
   color: var(--brown);
+  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
   font-size: 18px;
   line-height: 1.85;
+}
+
+.introCopy {
+  font-family: "HanziPen SC", "翩翩体-简", "HanziPen TC", "PingFang SC", "Microsoft YaHei", cursive;
+}
+
+.latinKeep {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
 }
 
 .resumeBoard {
@@ -763,6 +775,10 @@ h2 {
   font-size: clamp(30px, 2.6vw, 48px);
   font-weight: 400;
   line-height: 1.15;
+}
+
+.workTitleLine {
+  display: block;
 }
 
 .workTags {
