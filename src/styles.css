@@ -974,6 +974,94 @@ h2 {
   stroke: var(--wine);
 }
 
+.travelMap {
+  display: grid;
+  min-height: 100vh;
+  align-content: center;
+  padding: 70px 0 120px;
+}
+
+.mapLabel {
+  width: max-content;
+  margin-bottom: 24px;
+  border-color: rgba(121, 104, 76, 0.2);
+  color: #4b3a2a;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0)),
+    #e9ddc9;
+  box-shadow: 0 12px 28px rgba(48, 34, 18, 0.08);
+  transform: rotate(-1.4deg);
+}
+
+.travelMapFrame {
+  position: relative;
+  width: min(90vw, 1400px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 22px 54px rgba(75, 58, 42, 0.12);
+}
+
+.travelMapFrame::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px rgba(203, 187, 160, 0.18),
+    inset 0 -34px 72px rgba(75, 58, 42, 0.035);
+}
+
+.travelMapFinalImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  filter: saturate(0.96) contrast(0.98);
+}
+
+.travelMapMarkers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.travelMarker {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 7px 4px 5px;
+  border: 1px solid rgba(121, 104, 76, 0.25);
+  border-radius: 4px;
+  color: #4b3a2a;
+  background: rgba(248, 243, 232, 0.68);
+  box-shadow: 0 7px 16px rgba(75, 58, 42, 0.08);
+  font-family: Georgia, "Times New Roman", "PingFang SC", "Microsoft YaHei", serif;
+  font-size: clamp(9px, 0.85vw, 12px);
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 6px) scale(0.96);
+}
+
+.travelMarker i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7b8a54;
+  box-shadow: 0 0 0 3px rgba(123, 138, 84, 0.14);
+}
+
+.travelMarker.china i,
+.travelMarker.cyprus i,
+.travelMarker.portugal i {
+  background: #7a2634;
+  box-shadow: 0 0 0 3px rgba(122, 38, 52, 0.12);
+}
+
 .contactPage {
   display: grid;
   min-height: 100vh;
@@ -981,7 +1069,7 @@ h2 {
   padding: 90px 0;
   background:
     linear-gradient(rgba(72, 82, 40, 0.22), rgba(72, 82, 40, 0.26)),
-    url("/assets/optimized/contact-postcard-green.jpg") center / cover;
+    var(--contact-bg) center / cover;
 }
 
 .contactPoster {
@@ -1012,7 +1100,9 @@ h2 {
   gap: 14px;
 }
 
-.contactLinks a {
+.contactLinks a,
+.contactLinks span {
+  display: inline-block;
   padding: 13px 20px;
   border: 2px solid var(--ink);
   border-radius: 999px;
@@ -1021,7 +1111,8 @@ h2 {
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
-.contactLinks a:hover {
+.contactLinks a:hover,
+.contactLinks span:hover {
   border-color: var(--wine);
   background: var(--wine);
   color: var(--paper);
@@ -1079,7 +1170,8 @@ h2 {
 
   .about,
   .works,
-  .skills {
+  .skills,
+  .travelMap {
     padding: 76px 0;
   }
 
@@ -1100,6 +1192,18 @@ h2 {
 
 .outputCard img {
     height: 280px;
+  }
+
+  .travelMap {
+    overflow-x: hidden;
+  }
+
+  .travelMapFrame {
+    width: min(96vw, 1400px);
+  }
+
+  .travelMapMarkers {
+    display: none;
   }
 }
 
@@ -1223,6 +1327,7 @@ h2 {
 
   .motion-ready .about,
   .motion-ready .skills,
+  .motion-ready .travelMap,
   .motion-ready .contactPage {
     opacity: 0;
     transform: translateY(80px);
@@ -1231,6 +1336,7 @@ h2 {
 
   .motion-ready .about.is-visible,
   .motion-ready .skills.is-visible,
+  .motion-ready .travelMap.is-visible,
   .motion-ready .contactPage.is-visible {
     opacity: 1;
     transform: translateY(0);
@@ -1367,6 +1473,31 @@ h2 {
   .motion-ready .outputCard:nth-child(3) {
     --output-delay: 0.32s;
     --card-final-rotate: 1.2deg;
+  }
+
+  .motion-ready .travelMapFrame {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.985);
+    filter: blur(4px) saturate(0.94) contrast(0.98);
+    transition:
+      opacity 1.2s var(--ease-soft),
+      transform 1.2s var(--ease-luxury),
+      filter 1.2s var(--ease-soft),
+      box-shadow 1.2s var(--ease-soft);
+  }
+
+  .motion-ready .travelMapFrame.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0) saturate(0.96) contrast(0.98);
+    box-shadow:
+      0 24px 60px rgba(75, 58, 42, 0.14),
+      0 4px 14px rgba(75, 58, 42, 0.06);
+  }
+
+  .motion-ready .travelMapFrame.is-visible .travelMarker {
+    animation: markerIn 0.72s var(--ease-luxury) forwards;
+    animation-delay: calc(0.72s + var(--marker-delay, 0s));
   }
 
   .outputCard img {
@@ -1522,6 +1653,19 @@ h2 {
   }
 }
 
+@keyframes markerIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.96);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1530,5 +1674,10 @@ h2 {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+
+  .travelMarker {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
 }

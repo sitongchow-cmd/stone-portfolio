@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import ClickSpark from './ClickSpark'
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+
 const heroTags = [
   'soft strategy',
   'creative operator',
@@ -22,80 +24,80 @@ const works = [
     no: '01',
     title: 'FreeLab 自由客实验室',
     duties: '公众号内容运营 / 活动文案 / 社区增长 / 付费长文策划',
-    images: ['/assets/optimized/ppt/ppt-media-16.jpg', '/assets/optimized/ppt/ppt-media-06.jpg'],
+    images: [asset('assets/optimized/ppt/ppt-media-16.jpg'), asset('assets/optimized/ppt/ppt-media-06.jpg')],
     copy:
       '围绕自由职业者、数字游民与社区活动，完成活动文案、周报、干货内容与付费长文策划，建立更稳定的内容发布与用户触达节奏。',
     resultLabel: '数据成果',
     result: '公众号涨粉提升 300%，日均阅读量 5k+，独立完成 30+ 篇干货内容。',
     focus: ['公众号内容策划', '活动文案撰写', '社区增长运营', '付费长文策划'],
     outputs: [
-      { src: '/assets/optimized/ppt/ppt-media-16.jpg', label: '公众号主页' },
-      { src: '/assets/optimized/ppt/ppt-media-06.jpg', label: '长文内容示例' },
-      { src: '/assets/optimized/ppt/ppt-media-07.jpg', label: '干货内容合集' },
+      { src: asset('assets/optimized/ppt/ppt-media-16.jpg'), label: '公众号主页' },
+      { src: asset('assets/optimized/ppt/ppt-media-06.jpg'), label: '长文内容示例' },
+      { src: asset('assets/optimized/ppt/ppt-media-07.jpg'), label: '干货内容合集' },
     ],
   },
   {
     no: '02',
     title: 'E-Talent Pte.Ltd. / 易特新景',
     duties: '海外品牌内容 / 公众号 / 小红书 / 内容模块搭建',
-    images: ['/assets/optimized/ppt/ppt-media-23.jpg', '/assets/optimized/e-talent-team-plog.jpg'],
+    images: [asset('assets/optimized/ppt/ppt-media-23.jpg'), asset('assets/optimized/e-talent-team-plog.jpg')],
     copy:
       '负责公众号与小红书内容策划、结构优化和发布节奏维护，结合海外行业语境做内容转译与品牌表达。',
     resultLabel: '工作重点',
     result: '内容模块搭建、选题拆解、数据复盘、海外语境转译与稳定交付。',
     focus: ['内容模块搭建', '选题拆解与结构优化', '海外语境转译', '稳定内容交付'],
     outputs: [
-      { src: '/assets/optimized/ppt/ppt-media-23.jpg', label: '行业内容封面' },
-      { src: '/assets/optimized/e-talent-team-plog.jpg', label: '全球团队 Plog' },
-      { src: '/assets/optimized/e-talent-malaysia-visa.jpg', label: '马来西亚签证内容' },
+      { src: asset('assets/optimized/ppt/ppt-media-23.jpg'), label: '行业内容封面' },
+      { src: asset('assets/optimized/e-talent-team-plog.jpg'), label: '全球团队 Plog' },
+      { src: asset('assets/optimized/e-talent-malaysia-visa.jpg'), label: '马来西亚签证内容' },
     ],
   },
   {
     no: '03',
     title: '小米全球手机新品发布会',
     duties: '海外达人商务营销 / 德国市场 / KOL 建联 / 内容交付跟进',
-    images: ['/assets/optimized/ppt/ppt-media-19.jpg', '/assets/optimized/ppt/ppt-media-22.jpg'],
+    images: [asset('assets/optimized/ppt/ppt-media-19.jpg'), asset('assets/optimized/ppt/ppt-media-22.jpg')],
     copy:
       '参与德国区达人合作项目，完成达人筛选、触达、报价沟通、内容 brief 对齐和视频交付跟进。',
     resultLabel: '数据成果',
     result: '每周触达 / 建联达人 700+，单月推动约 3 万美金交易量，对接 20 位达人，跟进近 30 条视频交付。',
     focus: ['德国市场达人筛选', 'KOL 建联与报价沟通', '内容 brief 对齐', '视频交付跟进'],
     outputs: [
-      { src: '/assets/optimized/ppt/ppt-media-19.jpg', label: '达人内容封面' },
-      { src: '/assets/optimized/ppt/ppt-media-22.jpg', label: 'KOL 视频案例' },
-      { src: '/assets/optimized/xiaomi-kol-1-1m.jpg', label: '1.1M 播放案例' },
+      { src: asset('assets/optimized/ppt/ppt-media-19.jpg'), label: '达人内容封面' },
+      { src: asset('assets/optimized/ppt/ppt-media-22.jpg'), label: 'KOL 视频案例' },
+      { src: asset('assets/optimized/xiaomi-kol-1-1m.jpg'), label: '1.1M 播放案例' },
     ],
   },
   {
     no: '04',
     title: '资阳国际数字游民社区',
     duties: '小红书矩阵 / Instagram 观察 / AI 工作流 / 内容 SOP',
-    images: ['/assets/optimized/ppt/ppt-media-01.jpg', '/assets/optimized/ppt/ppt-media-26.jpg'],
+    images: [asset('assets/optimized/ppt/ppt-media-01.jpg'), asset('assets/optimized/ppt/ppt-media-26.jpg')],
     copy:
       '主导账号选题规划与内容排期，结合海外趋势观察、AI 选题拆解和二创转译流程，提升多账号内容生产效率。',
     resultLabel: '数据成果',
     result: '最高单篇获得 780+ 点赞、640+ 收藏，评论及私信累计 600+，有效提升曝光、互动与私域咨询量。',
     focus: ['小红书矩阵选题', 'Instagram 趋势观察', 'AI 选题拆解', '内容 SOP 复用'],
     outputs: [
-      { src: '/assets/optimized/ppt/ppt-media-01.jpg', label: '社区账号内容' },
-      { src: '/assets/optimized/ppt/ppt-media-13.jpg', label: '社群招募内容' },
-      { src: '/assets/optimized/ppt/ppt-media-26.jpg', label: '活动内容记录' },
+      { src: asset('assets/optimized/ppt/ppt-media-01.jpg'), label: '社区账号内容' },
+      { src: asset('assets/optimized/ppt/ppt-media-13.jpg'), label: '社群招募内容' },
+      { src: asset('assets/optimized/ppt/ppt-media-26.jpg'), label: '活动内容记录' },
     ],
   },
   {
     no: '05',
     title: '优觅 U&Me',
     duties: '小红书内容策划 / 社交媒体运营 / 生活方式内容表达',
-    images: ['/assets/optimized/ppt/ppt-media-05.jpg', '/assets/optimized/ppt/ppt-media-09.jpg'],
+    images: [asset('assets/optimized/ppt/ppt-media-05.jpg'), asset('assets/optimized/ppt/ppt-media-09.jpg')],
     copy:
       '根据平台调性与业务目标完成图文内容策划、标题优化、发布执行与互动数据观察，持续调整内容形式。',
     resultLabel: '工作重点',
     result: '生活方式内容表达、账号结构优化、标题与封面优化、互动数据观察。',
     focus: ['生活方式内容策划', '标题与封面优化', '账号结构整理', '互动数据观察'],
     outputs: [
-      { src: '/assets/optimized/ppt/ppt-media-05.jpg', label: '账号内容样本' },
-      { src: '/assets/optimized/ppt/ppt-media-09.jpg', label: '图文内容示例' },
-      { src: '/assets/optimized/ppt/ppt-media-18.jpg', label: '生活方式表达' },
+      { src: asset('assets/optimized/ppt/ppt-media-05.jpg'), label: '账号内容样本' },
+      { src: asset('assets/optimized/ppt/ppt-media-09.jpg'), label: '图文内容示例' },
+      { src: asset('assets/optimized/ppt/ppt-media-18.jpg'), label: '生活方式表达' },
     ],
   },
 ]
@@ -122,6 +124,45 @@ const strengths = [
     icon: 'spark',
   },
 ]
+
+const travelCountries = [
+  { name: 'China', className: 'china', style: { left: '67%', top: '46%', '--marker-delay': '0.18s' } },
+  { name: 'Thailand', className: 'thailand', style: { left: '68.5%', top: '59.5%', '--marker-delay': '0.42s' } },
+  { name: 'Indonesia', className: 'indonesia', style: { left: '74%', top: '74%', '--marker-delay': '0.96s' } },
+  { name: 'Germany', className: 'germany', style: { left: '32.5%', top: '30%', '--marker-delay': '0.3s' } },
+  { name: 'France', className: 'france', style: { left: '23.5%', top: '38.5%', '--marker-delay': '0.74s' } },
+  { name: 'Italy', className: 'italy', style: { left: '33.5%', top: '46.5%', '--marker-delay': '1.18s' } },
+  { name: 'Czechia', className: 'czechia', style: { left: '38%', top: '33.5%', '--marker-delay': '0.58s' } },
+  { name: 'Spain', className: 'spain', style: { left: '17.5%', top: '47%', '--marker-delay': '1.34s' } },
+  { name: 'Portugal', className: 'portugal', style: { left: '9.7%', top: '46%', '--marker-delay': '0.86s' } },
+  { name: 'Cyprus', className: 'cyprus', style: { left: '43.5%', top: '52%', '--marker-delay': '1.48s' } },
+  { name: 'Austria', className: 'austria', style: { left: '33.2%', top: '38%', '--marker-delay': '1.08s' } },
+  { name: 'Hungary', className: 'hungary', style: { left: '40.8%', top: '39.5%', '--marker-delay': '0.68s' } },
+  { name: 'Netherlands', className: 'netherlands', style: { left: '24%', top: '27%', '--marker-delay': '1.62s' } },
+  { name: 'Belgium', className: 'belgium', style: { left: '22.5%', top: '32%', '--marker-delay': '1.24s' } },
+]
+
+function WorldTravelMap() {
+  return (
+    <div className="travelMapFrame">
+      <img
+        className="travelMapFinalImage"
+        src={asset('assets/optimized/global-travel-map-final.png')}
+        alt="Global travel map"
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="travelMapMarkers" aria-hidden="true">
+        {travelCountries.map((marker) => (
+          <span className={`travelMarker ${marker.className}`} style={marker.style} key={marker.name}>
+            <i />
+            <b>{marker.name}</b>
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 function SketchIcon({ type }) {
   return (
@@ -181,7 +222,7 @@ function App() {
       document.body.classList.add('motion-ready')
 
       const revealItems = document.querySelectorAll(
-        '.about, .works, .skills, .contactPage, .worksHeader, .noteCard, .resumeFact, .workRow, .outputCard, .skillsIntro, .skillList article, .contactPoster',
+        '.about, .works, .skills, .travelMap, .travelMapFrame, .contactPage, .worksHeader, .noteCard, .resumeFact, .workRow, .outputCard, .skillsIntro, .skillList article, .contactPoster',
       )
 
       observer = new IntersectionObserver(
@@ -249,7 +290,7 @@ function App() {
         </div>
         <img
           className="heroImage"
-          src="/assets/optimized/hero-flowers-bubbles.jpg"
+          src={asset('assets/optimized/hero-flowers-bubbles.jpg')}
           alt=""
           aria-hidden="true"
           width="900"
@@ -411,14 +452,22 @@ function App() {
         </div>
       </section>
 
-      <section className="contactPage">
+      <section className="travelMap shell" aria-label="Global travel map">
+        <div className="sectionLabel mapLabel">Global Travel Map</div>
+        <WorldTravelMap />
+      </section>
+
+      <section
+        className="contactPage"
+        style={{ '--contact-bg': `url("${asset('assets/optimized/contact-postcard-green.jpg')}")` }}
+      >
         <div className="contactPoster shell">
           <p className="smallHand">Personal Work Collection</p>
           <h2>STONE</h2>
           <p>overseas content growth · copywriting · social media · influencer BD · AI workflow</p>
           <div className="contactLinks">
             <a href="mailto:sitongchow@gmail.com">sitongchow@gmail.com</a>
-            <a href="tel:+8615960028909">15960028909</a>
+            <span>ZeuStone-0107</span>
           </div>
         </div>
       </section>
