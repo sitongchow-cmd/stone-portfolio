@@ -75,8 +75,9 @@ const works = [
     images: [asset('assets/optimized/ppt/ppt-media-01.jpg'), asset('assets/optimized/ppt/ppt-media-26.jpg')],
     copy:
       '主导账号选题规划与内容排期，结合海外趋势观察、AI 选题拆解和二创转译流程，提升多账号内容生产效率。',
-    resultLabel: '数据成果',
-    result: '最高单篇获得 780+ 点赞、640+ 收藏，评论及私信累计 600+，有效提升曝光、互动与私域咨询量。',
+    resultLabel: '运营重点',
+    result:
+      '主导 3 个小红书账号的选题规划与内容排期，围绕社区入住、活动传播、办公场景与用户咨询搭建内容矩阵；同时梳理从选题拆解、图文制作、发布执行到数据复盘的运营工作流，对账号内容效率、互动表现与私域咨询结果负责。',
     focus: ['小红书矩阵选题', 'Instagram 趋势观察', 'AI 选题拆解', '内容 SOP 复用'],
     outputs: [
       { src: asset('assets/optimized/ppt/ppt-media-01.jpg'), label: '社区账号内容' },
@@ -467,7 +468,7 @@ function App() {
           <p>overseas content growth · copywriting · social media · influencer BD · AI workflow</p>
           <div className="contactLinks">
             <a href="mailto:sitongchow@gmail.com">sitongchow@gmail.com</a>
-            <span>ZeuStone-0107</span>
+            <span>微信：ZeuStone-0107</span>
           </div>
         </div>
       </section>
