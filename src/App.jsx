@@ -324,7 +324,7 @@ function App() {
               <span>content strategy · creative operations</span>
             </div>
             <p className="stoneScript">STONE</p>
-            <h1>自由发生之前｜作品展示集</h1>
+            <h1 className="heroTitleCn">自由发生之前｜作品展示集</h1>
             <p className="heroSubtitle">Portfolio Showcase · Content Strategy · Creative Operations</p>
             <div className="tagCloud">
               {heroTags.map((tag) => (
@@ -458,10 +458,15 @@ function App() {
         <WorldTravelMap />
       </section>
 
-      <section
-        className="contactPage"
-        style={{ '--contact-bg': `url("${asset('assets/optimized/contact-postcard-green.jpg')}")` }}
-      >
+      <section className="contactPage">
+        <img
+          className="contactBgImage"
+          src={asset('assets/optimized/contact-postcard-green.png')}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="contactPoster shell">
           <p className="smallHand">Personal Work Collection</p>
           <h2>STONE</h2>
